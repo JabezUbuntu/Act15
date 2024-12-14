@@ -1,0 +1,17 @@
+- name: OpenStack Service Setup
+  hosts: all
+  become: yes
+  vars_files:
+
+  tasks:
+    - name: Configure and Install Neutron
+      include_role:
+        name: Neutron
+
+    - name: Configure and Install Horizon
+      include_role:
+        name: Horizon
+
+    - name: Configure and Install Cinder
+      include_role:
+        name: Cinder
